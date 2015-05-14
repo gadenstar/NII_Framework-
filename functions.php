@@ -10,6 +10,13 @@ You should have received a copy of the GNU General Public License along with SAN
 */
 
 // Produces a list of pages in the header without whitespace
+
+require_once ( get_template_directory() . '/framework/functions/theme-functions.php');
+require_once ( get_template_directory() . '/framework/functions/common-scripts.php');
+
+
+
+
 function sandbox_globalnav() {
 	if ( $menu = str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages('title_li=&sort_column=menu_order&echo=0') ) )
 		$menu = '<ul>' . $menu . '</ul>';
