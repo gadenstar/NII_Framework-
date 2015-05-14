@@ -15,13 +15,11 @@
 <body class="<?php sandbox_body_class() ?>">
 
 <div id="wrapper" class="hfeed">
-
+	<?php //get_template_part("framework/headers/innerheader-2"); ?>
 	<div id="header">
-		<h1 id="blog-title"><span><a href="<?php bloginfo('home') ?>/" title="<?php echo _wp_specialchars( get_bloginfo('name'), 1 ) ?>" rel="home"><?php bloginfo('name') ?></a></span></h1>
-		<div id="blog-description"><?php bloginfo('description') ?></div>
+		<div class="uk-container uk-container-center">
+			<h1 id="blog-title"><span><a href="<?php bloginfo('home') ?>/" title="<?php echo _wp_specialchars( get_bloginfo('name'), 1 ) ?>" rel="home"><?php bloginfo('name') ?></a></span></h1>
+			<div id="blog-description"><?php bloginfo('description') ?></div>
+		</div>
 	</div><!--  #header -->
-
-	<div id="access">
-		<div class="skip-link"><a href="#content" title="<?php _e( 'Skip to content', 'sandbox' ) ?>"><?php _e( 'Skip to content', 'sandbox' ) ?></a></div>
-		<?php sandbox_globalnav() ?>
-	</div><!-- #access -->
+	<?php wp_nav_menu( array( 'container' => false, 'theme_location' => 'primary-menu' ) ); ?>	
